@@ -1,0 +1,19 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="1" class="lines">
+  <path id="svg_1" fill="#0000ff" stroke="#000" d="m114,225l117,0l0,7l-117,0l0,-7z" class="el"/>
+  <path id="svg_2" fill="#0000ff" stroke="#000" d="m268,225l117,0l0,7l-117,0l0,-7z" class="el"/>
+  <path id="svg_3" fill="#0000ff" stroke="#000" d="m437,225l117,0l0,7l-117,0l0,-7z" class="el"/>
+  <path id="svg_4" fill="#0000ff" stroke="#000" d="m607,226l117,0l0,7l-117,0l0,-7z" class="el"/>
+  <path id="svg_5" fill="#0000ff" stroke="#000" d="m114,233l8,0l0,130l-8,0l0,-130z" class="el"/>
+  <path id="svg_6" fill="#0000ff" stroke="#000" d="m268,232l8,0l0,135l-8,0l0,-135z" class="el"/>
+  <path id="svg_7" fill="#0000ff" stroke="#000" d="m492,232l8,0l0,130l-8,0l0,-130z" class="el"/>
+  <path id="svg_8" fill="#0000ff" stroke="#000" d="m664,232l8,0l0,135l-8,0l0,-135z" class="el"/>
+  <path id="svg_9" fill="#0000ff" stroke="#000" d="m114,361l117,0l0,7l-117,0l0,-7z" class="el"/>
+  <path stroke="#000" id="svg_10" fill="#0000ff" d="m283.52137,290l102.47864,0l0,7l-109,0l0,-7l6.52137,0z" class="el"/>
+  <path id="svg_11" fill="#0000ff" stroke="#000" d="m436,361l117,0l0,7l-117,0l0,-7z" class="el"/>
+  <path stroke="null" id="svg_12" fill="#ff0000" d="m54,206l11,0l0,177l-11,0l0,-177z" class="el"/>
+  <path stroke="null" id="svg_13" fill="#00ff00" d="m755,206.00001l11,0l0,177.99999l-11,0l0,-177.99999z" class="el"/>
+  <path id="svg_14" fill="#00ff00" stroke="null" d="m54,198l712,0l0,10l-712,0l0,-10z" class="el"/>
+  <path id="svg_15" fill="#ff0000" stroke="null" d="m54,383l712,0l0,10l-712,0l0,-10z" class="el"/>
+ </g>
+</svg>
