@@ -1,0 +1,117 @@
+<style>div{background:url(impbg.png);
+background-position:center top;
+height:calc(100vh);
+position:fixed;
+top:0px;
+left:0px;
+width:100%;
+   background-repeat:no-repeat;
+   background-attachment: fixed;
+   background-size:cover;}</style><title>CFIT PlateLet</title>
+<body><script src="instantpage.js" type="module"></script><div><script src="./live2d/js/live2d.js"></script>
+<canvas class="live2d" id="live2d" height="1750" width="750" style="pointer-events:none;position:absolute;z-index:1;left:-75;top:-1200;"></canvas>
+</div>
+<script type="text/javascript">
+var f=true;
+f=true;
+var userAgentInfo = "<?php echo $_SERVER['HTTP_USER_AGENT'];?>";
+var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+for (var v = 0; v < Agents.length; v++) 
+{  
+         
+if (userAgentInfo.indexOf(Agents[v]) > 0) 
+{ 
+f = false; break; 
+}  
+     
+}
+
+
+var canvas=document.querySelector('canvas');
+canvas.style.left='-25px';
+if(f){canvas.style.left=(parseInt(document.body.clientWidth)-500)+'px';canvas.style.top=(parseInt(document.body.clientHeight)-1700)+'px';}else{canvas.style.left='-95px';canvas.style.top=(parseInt(document.body.clientHeight)-1700)+'px';}
+document.body.onresize=function(){if(f){canvas.style.left=(parseInt(document.body.clientWidth)-500)+'px';canvas.style.top=(parseInt(document.body.clientHeight)-1700)+'px';}else{canvas.style.left='-95px';canvas.style.top=(parseInt(document.body.clientHeight)-1700)+'px';}};
+var docElm = document.body; 
+function fc(){
+if(docElm.requestFullscreen)
+{ 
+docElm.requestFullscreen(); 
+} 
+else 
+if(docElm.msRequestFullscreen)
+{ 
+docElm.msRequestFullscreen(); 
+} 
+else 
+if(docElm.mozRequestFullScreen)
+{ 
+docElm.mozRequestFullScreen(); 
+} 
+else 
+if(docElm.webkitRequestFullScreen)
+{ 
+docElm.webkitRequestFullScreen(); 
+} 
+}
+document.onmousedown=function(){
+fc();
+}
+document.touchstart=function(){
+fc();
+}
+var k="./live2d/model/platelet-3/kesyoban.model.json?1"
+loadlive2d("live2d", k);
+/*	L2Dwidget.init({ 
+		"model": { "jsonPath":k, "scale": 1, "hHeadPos":0.5, "vHeadPos":0.618 },
+		"display": { "position": "right", "width": 200, "height": 400, "hOffset": 100, "vOffset": 75 }, 
+		"mobile": { "show": true, "scale": 0.5 },
+		"react": { "opacityDefault": 0.7, "opacityOnHover": 0.3 } 
+		});
+
+this.canvas = document.getElementById('live2d');
+if (this.canvas.addEventListener) {
+    this.canvas.addEventListener("click", mouseEvent, false);
+    this.canvas.addEventListener("mousedown", mouseEvent, false);
+    this.canvas.addEventListener("mouseup", mouseEvent, false);
+    this.canvas.addEventListener("mousemove", mouseEvent, false);
+    this.canvas.addEventListener("click", mouseEvent, false);
+    this.canvas.addEventListener("touchstart", mouseEvent, false);
+    this.canvas.addEventListener("touchmove", mouseEvent, false);
+    this.canvas.addEventListener("touchend", mouseEvent, false);
+}*/
+
+var isDragging = false;
+var mouseOffsetx = 0;
+var mouseOffsety = 0;
+
+function mouseEvent(e) {
+    e.preventDefault();
+    if (e.type == "mousedown" || e.type == "touchdown") {
+        if ("button" in e && e.button != 0){
+            return;
+        }
+        isDragging = true;
+        mouseOffsetx = e.pageX - document.getElementById('live2d').offsetLeft;
+        mouseOffsety = e.pageY - document.getElementById('live2d').offsetTop;
+    } else if (e.type == "mousemove" || e.type == "touchmove") {
+        if(isDragging == true) {
+            var movex = e.pageX - mouseOffsetx;
+            var movey = e.pageY - mouseOffsety;
+            if(movex > window.innerWidth - document.getElementById('live2d').width)
+                movex = window.innerWidth - document.getElementById('live2d').width;
+            if(movex < 0) movex = 0;
+            if(movey > window.innerHeight - document.getElementById('live2d').height)
+                movey = window.innerHeight - document.getElementById('live2d').height;
+            if(movey < 0) movey = 0;
+          //  if(LAppDefine.IS_DRAGABLE) 
+{
+                document.getElementById('live2d').style.left = movex + "px";
+                document.getElementById('live2d').style.top = movey + "px";
+            }
+        }
+    } else if (e.type == "mouseup" || e.type == "touchup") {
+        if ("button" in e && e.button != 0) return;
+        isDragging = false;
+    }
+}
+</script></body>
